@@ -1,10 +1,15 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
+import environ
 import os
 import sys
+from django.core.management.commands.runserver import Command as runserver
 
+env = environ.Env()
+environ.Env.read_env()
 
 def main():
+    runserver.default_port=env('PORT') 
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'wiki.settings')
     try:
