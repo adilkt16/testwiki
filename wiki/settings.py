@@ -23,7 +23,7 @@ SECRET_KEY=env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-CSRF_TRUSTED_ORIGINS = ['https://wikipage.up.railway.app/']
+
 
 ALLOWED_HOSTS = ['*']
 
@@ -53,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CSRF_TRUSTED_ORIGINS = ['https://wikipage.up.railway.app/']
 
 ROOT_URLCONF = 'wiki.urls'
 
