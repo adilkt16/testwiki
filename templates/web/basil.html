@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html  style="overflow-x: hidden;" lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wikipedia</title>
+        <link rel="stylesheet" href="{% static  'css/style.css' %}" />
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Blinker:wght@200;300;400&display=swap" rel="stylesheet">        
+        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="{% static 'js/single_view.js' %}"></script>
+        <link rel="icon" type="image/x-icon" href="{% static 'images/logo-of-both-removebg-preview.png' %}">
+        <style>
+
+            .search.active {
+            background: rgba(0, 0, 0, 0.4);
+            width: 500px;
+            }
+            .search.active form {
+            display: inline-block;
+            }
+            .search {
+            margin-top: 25px;
+            margin-right: 25px;
+            background-color: #448aff;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+            transition: all 500ms ease;
+            }
+            .search > i {
+            line-height: 50px;
+            text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+            }
+
+                .nav__link {
+                    width: fit-content;
+                    padding: 0px 20px 10px 10px;
+                    z-index: 10;
+                    margin: 10px 0 10px;
+                    border-radius: 10px;
+                    background-color: lightblue;
+                }
+
+                .nav__link a {
+                    font-family: sans-serif;
+                    font-weight: bolder;
+                    font-size: 13px;
+                    display: block;
+                    text-align: left;
+                    padding: 10px 0 0 0 ;
+                }
+                .nav__link a:first-child{
+                    padding: 0;
+                }
+
+                .nav__link a:hover {
+                    background-color: lightcoral;
+                }
+                .hide {
+                    display: none;
+                }
+                section.for-nav__link {
+                    display: block;
+                }
+                @media screen and (min-width: 360px) {
+                    .nav__link {
+                        padding: 0px 60px 10px 10px;
+                    }
+                    .nav__link a {
+                        font-size: 14px;
+                    }
+                }
+                @media screen and (min-width: 400px) {
+                    .nav__link a {
+                        font-size: 16px;
+                        padding: 10px 0 0 0;
+                    }
+                    .nav__link {
+                        padding: 0px 60px 10px 20px;
+                    }
+                }
+                @media screen and (min-width: 480px) {
+                    .nav__link {
+                        padding: 0px 120px 10px 20px;
+                    }
+                }
+                @media screen and (min-width: 600px) {
+                    .nav__link {
+                        width: fit-content;
+                        padding: 0px 120px 10px 10px;
+                        margin: 0px 0 10px;
+                        border-radius: 10px;
+                        background-color: lightblue;
+                    }
+                    
+
+                    .nav__link a {
+                        display: block;
+                        text-align: left;
+                    }
+                    .nav__link a:first-child {
+                        padding: 00px;
+                    }
+                    .nav__link a:nth-child(2){
+                        margin: 20px 0 0 0;
+                    }
+                    section.for-nav__link {
+                        display: none;
+                    }
+                    
+                }
+                @media screen and (min-width: 720px) {
+                    #all header section.all-in-header {
+                        flex-wrap: wrap;
+                    }
+                }
+                @media screen and (min-width: 800px) {
+                    .nav__link {
+                        padding: 0px 80px 10px 10px;
+                    }
+                }
+        </style>
+    </head>
+    <body  style="overflow-x: hidden;">
+        <section id="all">
+            <header>
+                <section class="all-in-header">
+                    <div class="navbar">
+                        <a href="#" class="all-line" >
+                            <ul>
+                                <li>
+                                    <div  class="navbar-bar"></div>
+                                </li>
+                                <li>
+                                    <div class="navbar-bar"></div>
+                                </li>
+                                <li>
+                                    <div class="navbar-bar"></div>
+                                </li>
+                            </ul>
+                            <section class="wow for-nav__link">
+                                <div class="nav__link hide">
+                                    <a href="{% url 'web:index' %}">HOME</a>
+                                    <a href="mailto:wikipageverify@gmail.com.">PLACE ADS</a>
+                                    <a href="https://en.m.wikipedia.org/wiki/Basil_Joseph" target="_blank" >CLONED</a>
+                                </div>
+                            </section>
+                        </a>
+                    </div>
+                    <div class="main-heading">
+                        <a href="{% url 'web:index' %}">
+                            <div class="logo-text">
+                                <img src="{% static 'images/wiki-text-logo-cropped.png' %}" alt="text-logo" />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="container"   >
+                        <form id="search-form" action="">                            
+                            <input placeholder="Search In web" type="text" id="search" name="q">
+                            <button type="submit" id="search-btn">Search</button>
+                        </form>
+                    </div>
+                    <div class="both-search-revert">
+                        <div class="container-for-search-click"    >
+                            <a href="#">
+                                <div class="search-img-js">
+                                    <img src="{% static 'images/search-bg.png' %}" alt="search" />
+                                </div>
+                            </a>
+                        </div>
+                        <div class="container-for-revert-click"    >
+                            <a href="#">
+                                <div class="search-img-js">
+                                    <img src="{% static 'images/back.png' %}" alt="search" />
+                                </div>
+                            </a>
+                        </div>
+                    </div>  <!-- both search-revert -->
+                    
+                </section>
+            </header>
+            
+            <section class="wrapper">
+                <div class="all-wrapped-inside-this">
+                    <button class="query-cancellation" id="reset-btn" type="submit" >Cancel Search</button>
+                    <div class="all-searched-queries">
+                        {% for object in queryset %}
+                            <div class="searched-users-container pt-[20px] sm:pt-[60px]  ">
+                                <div class="remaining-users flex flex-wrap">
+                                    <a href="{% url 'web:wiki_detail' id=object.id slugged=object.slug %}" class="inline-block w-[95%]  sm:w-[45%] ">
+                                        <div class="single-main-user ">
+                                            <ul class="flex   text-center flex-wrap items-center">
+                                                <li class="single-person-image-li lg:mr-5 mx-auto sm:my-0 lg:mx-0 w-[98%]  max-w-[6rem] min-w-[6rem]">
+                                                    <div class="user-wiki-img max-w-[6rem] min-w-[6rem]	 block">
+                                                        <img src="/media/{{object.image}}" class="max-h-[100px] rounded-full border-lime-500 border-2	p-1" alt="user_image" />
+                                                    </div>
+                                                </li>
+                                                <li class="single-person-details-li block mr-3 lg:w-auto w-[98%]">
+                                                    <h4 class="block font-sans text-xl text-indigo-800	">{{object.name}}</h4>
+                                                    <h6 class="block font-mono text-sm	">{{object.occupation}}</h6>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        {% empty %}
+                            <h2 class="block mx-auto my-[30px] w-[98%]  text-3xl text-center font-sans" >No certain User</h2>
+                        {% endfor %}
+                    </div>
+                </div>
+                <section id="common">
+                    <h1 class="persons-name"> {{instance.name}} </h1>
+                    <span class="article">Article</span>
+                    <div class="download_top">
+                        <a href="Javascript:window.print();" class="down_img_a_button" >
+                            <div class="download_img">
+                                <img src="{% static 'images/download.png' %}" alt="download_img" />
+                            </div>
+                            <span class="download_pdf">Download PDF</span>
+                        </a>
+                        <a href="{% url 'web:index' %}" class="down_img_a_button">
+                            <div class="download_img pencil">
+                                <img src="{% static 'images/pencil.png' %}" alt="pencil_edit" />
+                            </div>
+                            <span class="download_pdf">Edit</span>
+                        </a>
+                    </div>
+                    <div class="content">
+                        <!-- <p class="content-p"> <b> {{instance.name}} </b>  {{instance.born}} is an famous Indian {{instance.occupation}} and actor who works in the <em>Malayalam film industry.</em> He directed three films, Kunjiramayanam (2015), Godha (2017) and Minnal Murali (2021). All three films were a huge success both commercially and critically. Besides direction, Basil is also an actor and has acted in numerous films.</p> -->
+                        <p class="content-p">  {{instance.main_description}}  </p>
+                    </div>
+                    <section class="nav-table">
+                        <div class="nav-contents">
+                            <div class="special-table">
+                                <div class="first-visible first-visible-all view">
+                                    <ul>
+                                        <li>
+                                            <div class="table-img">
+                                                <img src="{% static  'images/nav-content.svg' %}" alt="nav" />
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h3>Contents</h3>
+                                        </li>
+                                        <li>
+                                            <div class="expand_all">
+                                                <img src="{% static  'images/expand.svg' %}" alt="expand image" />
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div> <!-- div.first-visible view ends here -->
+                                <div class="first-invisible first-visible-all">
+                                    <ul>
+                                        <li>
+                                            <div class="table-img">
+                                                <img src="{% static  'images/nav-content.svg' %}" alt="nav" />
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h3>Contents</h3>
+                                        </li>
+                                        <li>
+                                            <div class="expand_all">
+                                                <img src="{% static  'images/expand.svg' %}" alt="expand image" />
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <section class="bottom-contents-clicks">
+                                        <a href="#"><p class="click-p-items">Career</p></a>
+                                        <!-- <a href="#"><p class="click-p-items">Awards</p></a> -->
+                                        <a href="#"><p class="click-p-items">External links</p></a>
+                                    </section>
+                                </div> <!-- div.first-visible first-invisible none-view ends here -->
+                            </div> <!-- div.special-table ends here -->
+                            <section class="all-categories">
+                                <section class="each-category">
+
+                                    <div class="clickable activeone both-headandimg">
+                                        <ul>
+                                            <li>
+                                                <div class="expand_img">
+                                                    <img src="{% static  'images/expand.svg' %}" alt="expand_img" />
+                                                </div>
+                                            </li>
+                                            <li> <h5>Career</h5> </li>
+                                        </ul>
+                                        <div id="career_description" class="clicked">
+                                            <div class="more_user_Detail">
+                                                <p> {{instance.career_description}} </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+
+                                    <div class="clickable activethree both-headandimg">
+                                        <ul>
+                                            <li>
+                                                <div class="expand_img">
+                                                    <img src="{% static  'images/expand.svg' %}" alt="expand_img" />
+                                                </div>
+                                            </li>
+                                            <li> <h5>External Link</h5> </li>
+                                        </ul>
+                                        <div class="clicked">
+                                            <div class="more_user_Detail">
+                                                <p> The connecting links for Username are   <b  style="font-weight: bolder;">Insta:</b> <a style="color: blue;" target="_blank" href="{{instance.insta_link}}">Insta</a> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </section>
+                            </section>
+                            
+                        </div> <!-- div.nav-contents ends here -->
+                        <div class="table-contents">
+                            <div class="table-table">
+                                <h3> {{instance.name}} </h3>
+                                <div class="main-img-full">
+                                    <div class="main-img">
+                                        <img src="/media/{{instance.image}}" alt="user_image_for_Display">
+                                    </div>
+                                    <p class="in">Basil in 2019</p>
+                                </div>
+                                <div class="both-table born">
+                                    <h6>Born</h6>
+                                    <p class="details born-details">{{instance.born}}</p>
+                                </div>
+                                <div class="both-table edu">
+                                    <h6>Education</h6>
+                                    <p class="details edu-details">{{instance.education}}</p>
+                                </div>
+                                <div class="both-table occupation">
+                                    <h6>Occupations</h6>
+                                    <p class="details occupation-details"> {{instance.occupation}} </p>
+                                </div>
+                                <a target="_blank" href="{{instance.insta_link}}">
+                                    <div class="both-table insta">
+                                        <h6>Insta</h6>
+                                        <p class="details insta-details">View insta id</p>
+                                    </div>
+                                </a>
+                                <a target="_blank" href="https://api.whatsapp.com/send/?text={{request.build_absolute_uri}}">
+                                    <div class="both-table face">
+                                        <h6>Share</h6>
+                                        <!-- <p class="details face-details">View facebook id</p> -->
+                                    </div>
+                                </a>
+                            </div> <!-- div.table-table ended -->
+                        </div>
+                    </section>
+                </section> <!-- #common ended -->
+                
+            </section> <!-- .wrapper ended -->
+            
+        
+        </section> <!-- #all ended -->
+
+        <section id="footerfull">
+            <section class="wrapper">
+                <div class="edited_date">
+                    <ul>
+                        <li>
+                            <div class="time-img">
+                                <img src="{% static  'images/time.svg' %}" alt="time-image">
+                            </div>
+                        </li>
+                        <li> <p class="time-p"> <b>Created On  {{instance.dateTime}}  </b>  by <em> {{instance.name}} </em> </p> </li>
+                    </ul>
+                </div> <!-- div.edited ended here -->
+                <div class="related">
+                    <h6>OTHER ARTICLES</h6> 
+                    <ul class="all_articles">
+                        {% for post in posts_all %}
+                            <a href="{% url 'web:wiki_detail' id=post.id slugged=post.slug %}">
+                                <li class="each_articles">
+                                    <section class="for_img_contain">
+                                        <div class="user_img_or_blank_page">
+                                            <img src="/media/{{post.image}}" alt="user_img" />
+                                        </div>
+                                    </section>
+                                    <section class="article-details">
+                                        <h5>{{post.name}}</h5>
+                                        <p class="base_description">{{post.occupation}}</p>
+                                    </section>
+                                </li>
+                            </a>
+                        {% endfor %}
+                    </ul>
+                </div> <!-- div.related ended here -->
+                <div class="bottom-terms">
+                    <a href="{% url 'web:index' %}">
+                        <div class="wiki-logo">
+                            <img src="{% static 'images/wiki-text-logo-cropped.png' %} " alt="logo" />
+                        </div>
+                    </a>
+                    <p>Content is available under <a target="_blank" href="https://creativecommons.org/licenses/by-sa/3.0/"> CC BY-SA 3.0</a>unless otherwise noted. </p>
+                    <ul>
+                        <li><a target="blank" class="link-for-priv" target="_blank"  href="https://foundation.wikimedia.org/wiki/Terms_of_Use/en">Terms of Use</a></li>
+                        <li><a target="blank" class="link-for-priv" target="_blank"  href="https://foundation.wikimedia.org/wiki/Privacy_policy">Privacy policy</a></li>
+                        <li><a target="blank" class="link-for-priv" href="{% url 'users:t_and_c' %}">Adil's t&c</a></li>
+                    </ul>
+                </div>
+            </section>
+        </section>
+        
+        <script>
+            //first one for only displaying when clicking on it
+            $('#search').click(function() {
+                $('.all-wrapped-inside-this ').css('display', 'unset');
+            });
+
+            $('#search').blur(function() {
+                setTimeout(function() {
+                    $('.all-wrapped-inside-this').css('display', 'none');
+                }, 500);
+            });
+
+            $("#reset-btn").click(function() {
+        // Reset the input field value
+        window.location.href = window.location.pathname;
+    });
+
+
+
+            //second starts from here 
+            const hamburger = document.querySelector('.all-line');
+            const navLink = document.querySelector('.nav__link');
+            const sectionNavLink = document.querySelector('.wow');
+            
+            hamburger.addEventListener('click', () => {
+                navLink.classList.toggle('hide');
+                sectionNavLink.classList.toggle('for-nav__link');
+            });
+
+
+        </script>
+    </body>
+</html>

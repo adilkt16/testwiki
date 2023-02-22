@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			{% load static %}
+			<meta charset="UTF-8" />
+			<title>WIKI Post | Create your WIKI</title>
+			<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+			<link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/Adil A.png' %}" />     
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<meta property="og:image" content="" />
+			<meta name="description" content="" />
+			<meta name="keywords" content="" />
+			<link rel="icon" type="image/x-icon" href="{% static 'images/logo-of-both-removebg-preview.png' %}">
+			<style>
+				.upload-button {
+				/* Used to position the input */
+				position: relative;
+
+				/* Center the content */
+				align-items: center;
+				display: flex;
+
+				/* Border */
+				border: 1px solid #d1d5db;
+				border-radius: 0.25rem;
+				padding: 0.25rem 0.5rem;
+				cursor: pointer;
+				border: 1px solid #000;
+
+			}
+
+			.upload-button__input {
+				/* Take the full size */
+				height: 100%;
+				cursor: pointer;	
+				border: 1px solid #000;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 100%;
+
+				/* Make it transparent */
+				opacity: 0;
+			}
+
+			.upload-button__icon {
+				margin-right: 0.5rem;
+			}
+			.custom-checkbox-button {
+				/* Center the content horizontally */
+				align-items: center;
+				display: inline-flex;
+
+				/* Cursor */
+				cursor: pointer;
+			}
+
+			.custom-checkbox-button__input {
+				/* Hide it */
+				display: none;
+			}
+
+			.custom-checkbox-button__square {
+				border: 1px solid #d1d5db;
+				border-radius: 0.25rem;
+
+				/* Spacing */
+				margin-right: 0.5rem;
+				padding: 0.25rem;
+			}
+
+			.custom-checkbox-button__checkbox {
+				background-color: transparent;
+				border-radius: 0.25rem;
+				height: 1rem;
+				width: 1rem;
+			}
+
+			.custom-checkbox-button__checkbox--selected {
+				/* For selected checkbox */
+				background-color: #3b82f6;
+			}
+			</style>
+		</head>
+		<body> 
+			
+			<section id="edit-post-home">
+				<section class="wrapper">
+					<section class="spotlight">
+						<h3 class="create_heading" style="display: block;" >Create new post</h3>
+
+						<section class="banner-ad ad-one">
+							<div class="for-centering-ad">
+								<a href="https://steyp.com/" target="_blank" >
+									<div class="banner-ad-container">
+										<img src="{% static 'images/ads/steyp-logo.svg' %}" alt="steyp ad" />
+									</div>
+								</a>
+								<a href="https://www.lasaguapp.in/" target="_blank" >
+									<div class="banner-ad-container">
+										<img src="{% static 'images/ads/lasagu-banner.png' %}" alt="steyp ad" />
+									</div>
+								</a>
+							</div>
+						</section>
+						
+						<form action="" method="post" enctype="multipart/form-data">
+							{% csrf_token %}
+							<div class="form-field">
+								{{ form.as_p }}
+							</div>
+							<section class="agree_terms">
+								<p>By submitting , you have agreed to our terms and conditions</p>
+							</section>
+							<div style="margin-top: 10px;" class="form-field">
+								<input type="submit" value="Submit" />
+							</div>
+						</form>
+
+
+						
+						<div class="for-home">
+							<a href="{% url 'web:view_all_created'  %}"><button>Home</button></a>
+						</div>
+					</section> <!-- .spotlight ended here -->
+					
+				</section>
+			</section>
+			<section class="for-termsandconditions">
+				<div class="grouping-all">
+					<a href="{% url 'users:t_and_c' %}"><span>Terms and conditions</span></a>
+					<a href="{% url 'users:t_and_c' %}"><span>Privacy Policy</span></a>
+					<a href="{% url 'web:adil' %}"><span>About Creator</span></a>
+					<a target="blank" href="mailto:adilkt16@gmail.com"><span>Give Ads</span></a>
+				</div>
+			</section>
+		</body>
+	</html>

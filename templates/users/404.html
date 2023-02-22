@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x: hidden;" >
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="icon" type="image/x-icon" href="{% static 'images/logo-of-both-removebg-preview.png' %}">
+        <title>Custom error page</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body  style="overflow-x: hidden;" class="min-h-full block max-h-full for_main_body">
+        <section id="full-here">
+            <section class="for_second_bg">
+                <nav class="flex items-center justify-between flex-wrap p-6">
+                    <div class="flex items-center flex-shrink-0 text-black mr-6">
+                        <a href="{% url 'web:index' %}">
+                            <div class="main-logo block w-[120px] max-w-md">
+                                <img src="{% static 'images/logo-of-both-removebg-preview.png' %}" alt="main logo" />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+                        <div class="text-sm lg:flex-grow">
+                            <a href="{% url 'web:view_all_created' %}" class="font-bold block mt-4 lg:inline-block lg:mt-0 decoration-green-200 hover:text-black mr-4">Create</a>
+                        </div>
+                    <div>
+                        <a href="{% url 'web:index' %}" class="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent font-bold hover:text-teal-500 hover:bg-black mt-4 lg:mt-0">Home</a>
+                    </div>
+                    </div>
+                </nav>
+
+                <section class="top-of-wrapper grid place-items-center h-screen max-h-96 min-h-96 text-center content-center ">
+
+                    <section class="wrapper font-serif 	 font-bold">
+
+                        <h1 class="text-3xl	mb-[40px]" >Seems like something went Wrong...</h1>
+
+                        <a href="{% url 'web:index' %}" class=" my-1 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >Return</a>
+    
+    
+    
+                    </section>  <!-- .wrapper -->
+                </section>
+
+                
+
+                <div class="for-bg-awesome">
+                    <div class="shapes animate-shapes bubble">
+                        <img src="{% static 'images/custom1.png' %}" alt="shape-bubble" />
+                    </div>
+                    <div class="shapes animate-shapes hexa">
+                        <img src="{% static 'images/custom2.png' %}" alt="shape-hexa" />
+                    </div>
+                    <div class="shapes animate-shapes three-shapes">
+                        <img src="{% static 'images/custom3.png' %}" alt="shape-three-shapes" />
+                    </div>
+                    <div class="shapes animate-shapes tria">
+                        <img src="{% static 'images/custom4.png' %}" alt="shape-tria" />
+                    </div>
+                    <div class="shapes animate-shapes hexa-out">
+                        <img src="{% static 'images/custom22.png' %}" alt="shape-hexa-out" />
+                    </div>
+                    <div class="shapes animate-shapes love-shape">
+                        <img src="{% static 'images/custom55.png' %}" alt="love-shape" />
+                    </div>
+                    <div class="shapes animate-shapes three-new-shapes">
+                        <img src="{% static 'images/custom66.png' %}" alt="shape-three-new-shapes" />
+                    </div>
+                </div>
+
+        </section> <!-- #view-full-here ended here -->
+        <div class="bottom-tandc">
+            <a href="{% url 'users:t_and_c' %}" class="tandc">Terms and Conditions</a>
+            <a href="{% url 'web:adil' %}" class="akt16">Creator</a>
+            <a href="{% url 'users:t_and_c' %}" class="tandc pp">Privacy policy</a>
+        </div>
+        
+    </body>
+</html>

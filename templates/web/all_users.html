@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x: hidden;" >
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <title>View All users</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'images/logo-of-both-removebg-preview.png' %}">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+
+            .page-item.active .page-link {
+                z-index: 3;
+                color: #fff;
+                background-color: #007bff;
+                border-color: #007bff;
+            }
+            .page-item:first-child .page-link {
+                margin-left: 0;
+                border-top-left-radius: 0.25rem;
+                border-bottom-left-radius: 0.25rem;
+            }
+            .page-link {
+                position: relative;
+                display: block;
+                padding: 0.5rem 0.75rem;
+                margin-left: -1px;
+                line-height: 1.25;
+                color: #007bff;
+                background-color: #fff;
+                border: 1px solid #dee2e6;
+            }
+            .sr-only {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                white-space: nowrap;
+                border-width: 0;
+            }
+            .page-item:last-child .page-link {
+                border-top-right-radius: 0.25rem;
+                border-bottom-right-radius: 0.25rem;
+            }
+
+
+            .showLeft {
+            text-shadow: white !important;
+            color: black !important;
+            padding: 10px;
+            }
+            .icons li {
+            background: none repeat scroll 0 0 black;
+            height: 7px;
+            width: 7px;
+            line-height: 0;
+            list-style: none outside none;
+            margin-right: 15px;
+            margin-top: 3px;
+            vertical-align: top;
+            border-radius: 50%;
+            pointer-events: none;
+            }
+            .btn-left {
+            left: 0.4em;
+            }
+            .btn-right {
+            right: 0.4em;
+            }
+            .btn-left,
+            .btn-right {
+            /* position: absolute; */
+            top: 0.24em;
+            }
+            .dropbtn {
+
+            /* position: fixed; */
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            }
+            .dropdown {
+            /* position: absolute; */
+            /* display: inline-block; */
+            /* right: 0.4em; */
+            }
+            .dropdown-content {
+                border-radius: 10px;
+                margin-left: 25px;
+                margin-top: -40px;
+                display: none;
+                /* position: relative; */
+                /* margin-top: 60px; */
+                background-color: #f9f9f9;
+                min-width: 160px;
+                overflow: auto;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            }
+
+            .dropdown a:hover {
+            background-color: #f1f1f1;
+            }
+
+            .show {
+            display: block;
+            }
+
+        </style>
+    </head>
+    <body  style="overflow-x: hidden;" class="for_main_body">
+        <section id="full-here">
+            <section class="for_second_bg">
+
+                <nav class=" p-[10px]  block sm:flex items-center justify-between  sm:p-6  ">
+                    <div class=" wrap w-auto block my-0 mx-auto sm:no-wrap sm:flex  items-center flex-shrink-0 text-black">
+                        <a href="{% url 'web:index' %}">
+                            <div class="main-logo w-[100px] mx-auto my-0 sm:w-[120px] block  max-w-md">
+                                <img src="{% static 'images/logo-of-both-removebg-preview.png' %}" alt="main logo" />
+                            </div>
+                        </a>
+                    </div>
+                    <div class="w-49/50 sm:w-auto flex justify-between	 flex-grow lg:flex  lg:items-center lg:w-auto">
+                        <div class="text-sm  lg:flex-grow">
+                            
+                            
+                            {% if post_created %}
+                                <a href="{% url 'web:add_wiki' %}" class="font-bold inline-block 	 mt-2 lg:inline-block lg:mt-0 decoration-green-200 hover:text-black mr-4">Create New?</a>
+                            {% else %}
+                                <a href="{% url 'web:add_wiki' %}" class="font-bold inline-block   mt-2 lg:inline-block lg:mt-0 decoration-green-200 hover:text-black mr-4">Create</a>
+                            {% endif %}
+                        </div>
+                    <div class="flex mt-[10px] items-center">
+                        {% if request.user.is_authenticated %}
+                                    <a href="{% url 'users:logout' %}" class="inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black hover:border-transparent font-bold hover:text-teal-500 hover:bg-black mt-0 lg:mt-0">Log Out</a>
+
+                                    <h3  class="if_else_user_logged ml-[10px] inline-block text-sm px-4 py-2 leading-none border rounded text-black border-black font-bold "    >{{request.user.username}}</h3>
+
+                                    {% endif %}
+                    </div>
+                    </div>
+                </nav>
+
+                
+
+                <section class="wrapper">
+                    <section class="top-same-user my-10 mx-auto block max-w-fit">
+                        {% if current_user_post %}
+                        <!-- % if my_own % instead of this , we use above line -->
+                            {% for current in current_user_post  %}
+                            
+                                <div class="both-dots-user mb-[40px] flex">
+                                        <a href="{% url 'web:wiki_detail' id=current.id slugged=current.slug %}">
+                                        <div class="single-main-user border-2 w-80 border-sky-500 py-3 px-3 rounded-xl">
+                                            <ul class="flex flex-wrap flex-col sm:flex-row sm:flex-nowrap text-center sm:text-start items-center">
+                                                <li class="sm:mr-5 ">
+                                                    <div class="user-wiki-img w-24 block ">
+                                                        <img src="/media/{{current.image}}" class="rounded-full border-rose-600 border-2 p-1" alt="user_image" />
+                                                    </div>
+                                                </li>
+                                                <li class="block mr-3">
+                                                    <h4 class="block font-sans text-xl text-indigo-800">{{current.name}}</h4>
+                                                    <h6 class="block font-mono text-sm">{{current.occupation}}</h6>
+                                                    <a href="{% url 'web:delete_post' current.id %}" class=" my-1 block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >Delete Wiki</a>
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </a>
+                                    <div class="dropdown">
+                                        <!-- three dots -->
+                                        <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown()">
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ul>
+                                        <!-- menu -->
+                                        {% for why in what  %}
+                                            <div id="myDropdown" class="dropdown-content">
+                                                <a href="{% url 'web:add_wiki' %}">Create New?</a>
+                                                <a target="blank" href="https://api.whatsapp.com/send/?text={{request.build_absolute_uri}}" target="_blank" >Share</a>
+                                                <a href="{% url 'web:delete_post' current.id %}" class="btn btn-danger">Delete</a>       
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <a href="#" class="inline-block w-[95%] md:w-[45%] lg:w-[100%]  sm:w-[45%] sm:block sm:mx-auto  mb-[10px] lg:mr-[20px]" >
+                                <div class="single-main-user border-2 lg:py-[30px] lg:px-[60px] border-sky-500 py-3 px-3 rounded-xl">
+                                    <ul class="flex lg:block lg:flex-nowrap lg:text-start text-center flex-wrap items-center">
+                                        <li class="lg:mr-5 mx-auto sm:my-0 lg:mx-auto w-[98%] lg:w-auto max-w-[6rem] min-w-[6rem]">
+                                            <div class="user-wiki-img max-w-[6rem] min-w-[6rem]	 block">
+                                                <img src="{% static 'images/good.png' %}" class="max-h-[100px] rounded-full border-lime-500 border-2 p-1" alt="user_image" />
+                                            </div>
+                                        </li>
+                                        <li class="block lg:text-center lg:w-auto w-[98%]">
+                                            <h4 class="block font-sans text-xl text-indigo-800">Name</h4>
+                                            <h6 class="block font-mono text-sm">Occupation</h6>
+                                            <a href="{% url 'web:add_wiki' %}" class=" my-1 block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >Create Wiki</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
+
+                        {% endif %}
+                    </section> <!-- .top-same-user -->
+                    
+                    
+                    <section id="below-other-users" >
+                        <div class="search-other  border-black border-t-2   mb-[20px] pt-[20px] sm:pt-[40px]   sm:flex items-center">
+                            <h3 class="text-3xl md:text-5xl  rounded-xl  mb-[10px] font-sans mr-[50px]">Other Users</h3>
+                            <div>
+                                <section class="all-in-header">
+                                    <div class="container-for-search flex items-center"   >
+                                        <form action="" class="">
+                                                <div class="flex items-center">
+                                                    <input placeholder="Search In web" type="text" class="w-[230px] sm:w-[280px] border-2 border-lime-500  bg-white py-[6px] px-[8px] rounded-xl" id="search_person" name="q">
+                                                    <button type="submit" value="Search" id="searchperson-btn" class="bg-transparent " >
+                                                        <div class="w-[25px] ml-[10px]">
+                                                            <img src="{% static 'images/search-person.png' %}" class="bg-transparent" alt="search" />
+                                                        </div>
+                                                    </button>
+                                                </div>
+                                        </form>
+                                    </div>
+                                </section>
+                                <button class="query-cancellation py-2 px-3 mt-[10px] rounded-xl font-bold text-xs bg-gray-400	" id="reset-btn" type="submit" >Cancel Search</button>
+
+                            </div>
+                        </div> <!-- .search-other ended here -->
+                        
+
+
+                        <div class="remaining-users-container pt-[20px] sm:pt-[60px]   ">
+                            <div class="remaining-users flex flex-wrap">
+                                
+                                
+                                    {% for object in queryset %}
+                                        <a href="{% url 'web:wiki_detail' id=object.id slugged=object.slug %}" class="inline-block w-[95%] md:w-[30%] sm:w-[45%] mb-[10px] mr-[20px] ">
+                                            <div class="single-main-user border-2  border-sky-500 py-3 px-3 rounded-xl">
+                                                <ul class="flex lg:flex-nowrap lg:text-start text-center flex-wrap items-center">
+                                                    <li class="lg:mr-5 mx-auto sm:my-0 lg:mx-0 w-[98%] lg:w-auto max-w-[6rem] min-w-[6rem]">
+                                                        <div class="user-wiki-img max-w-[6rem] min-w-[6rem]	 block">
+                                                            <img src="/media/{{object.image}}" class="max-h-[100px] rounded-full border-lime-500 border-2	p-1" alt="user_image" />
+                                                        </div>
+                                                    </li>
+                                                    <li class="block mr-3 lg:w-auto w-[98%]">
+                                                        <h4 class="block font-sans text-xl text-indigo-800	">{{object.name}}</h4>
+                                                        <h6 class="block font-mono text-sm	">{{object.occupation}}</h6>
+                                                    </li>
+                                                    
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    {% empty %}
+                                    <h2 class="block mx-auto my-[30px] w-[98%]  text-3xl text-center font-sans" >No certain User</h2>
+                                    {% for post in posts_all %}
+                                        <a href="{% url 'web:wiki_detail' id=post.id slugged=post.slug %}" class="inline-block w-[95%] md:w-[30%] sm:w-[45%] mb-[10px] mr-[20px] ">
+                                            <div class="single-main-user border-2  border-sky-500 py-3 px-3 rounded-xl">
+                                                <ul class="flex lg:flex-nowrap lg:text-start text-center flex-wrap items-center">
+                                                    <li class="lg:mr-5 mx-auto sm:my-0 lg:mx-0 w-[98%] lg:w-auto max-w-[6rem] min-w-[6rem]">
+                                                        <div class="user-wiki-img max-w-[6rem] min-w-[6rem]	 block">
+                                                            <img src="/media/{{post.image}}" class="max-h-[100px] rounded-full border-lime-500 border-2	p-1" alt="user_image" />
+                                                        </div>
+                                                    </li>
+                                                    <li class="block mr-3 lg:w-auto w-[98%]">
+                                                        <h4 class="block font-sans text-xl text-indigo-800	">{{post.name}}</h4>
+                                                        <h6 class="block font-mono text-sm	">{{post.occupation}}</h6>
+                                                    </li>
+                                                    
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    {% endfor %}
+                                
+                                {% endfor %}
+                            </div> <!-- .remaining-users ended here -->
+
+
+                                
+
+
+                                <nav aria-label="Page navigation example" class="my-[10px] block mx-auto my-0 max-w-fit" >
+                                    <ul class="pagination flex pl-0 rounded justify-content-center">
+                                        {% for i in posts_all.paginator.page_range %}
+                                            {% if posts_all.number == i %}
+                                                <li class="page-item active  prev-button-button" aria-current="page">
+                                                    <span class="page-link prev-button-button">
+                                                    {{ i }}
+                                                    <span class="sr-only">(current)</span>
+                                                </li>
+                                            {% else %}
+                                                <li class="page-item"><a class="page-link " style="color:#333;background-color: rgb(74 222 128 );" href="?page={{ i }}">{{ i }}</a></li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                </nav> <!--end of Pagination-->
+
+
+                                <div class="both-next-prev-button block w-auto max-w-fit mx-auto my-[10px]">
+                                    <div class="for-centering-div flex items-center">
+                                        <!-- {% if posts_all.has_previous %}
+                                        <div class="prev-button-container py-[6px] font-sans px-[15px] bg-green-400	rounded cursor-pointer mr-[20px]">
+                                            <a href="?page={{ posts_all.previous_page_number }}" class="prev-button-button" >Previous</a>
+                                        </div>
+                                        {% endif %} -->
+                                        <span class="current">
+                                            Page {{ posts_all.number }} of {{ posts_all.paginator.num_pages }}
+                                        </span>
+                                        <!-- {% if posts_all.has_next %}
+                                        <div  class="ml-[20px] Next-button-container py-[6px] font-sans px-[15px] bg-green-400	rounded cursor-pointer mr-[20px]">
+                                            <a href="?page={{ posts_all.next_page_number }}" class="Next-button-button">Next</a>
+                                        </div>
+                                        {% endif %} -->
+                                    </div>
+                                </div>
+
+
+
+                            
+                        </div> <!-- .remaining-users-container ended here -->
+                    </section>
+                </section>  <!-- .wrapper -->
+
+                
+
+        </section> <!-- #view-full-here ended here -->
+        <div class="bottom-tandc">
+            <a href="{% url 'users:t_and_c' %}" class="tandc">Terms and Conditions</a>
+            <a href="{% url 'web:adil' %}" class="akt16">Creator</a>
+            <a href="{% url 'users:t_and_c' %}" class="tandc pp">Privacy policy</a>
+        </div>
+
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        <script>
+
+            
+                    $("#reset-btn").click(function() {
+                        // Reset the input field value
+                        window.location.href = window.location.pathname;
+                    });
+
+            function showDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+            if (!event.target.matches(".dropbtn")) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains("show")) {
+                    openDropdown.classList.remove("show");
+                }
+                }
+            }
+            };
+
+        </script>
+    </body>
+</html>

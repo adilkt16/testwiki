@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x: hidden;" >
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="icon" type="image/x-icon" href="{% static 'images/logo-of-both-removebg-preview.png' %}">
+        <title>WIKI_Page AKT16</title>
+    </head>
+    <body  style="overflow-x: hidden;" class="for_main_body">
+        <section id="full-here">
+            <section class="for_second_bg">
+                <header class="main-page-header">
+                    <ul>
+                        <li>
+                            <a href="{% url 'web:index' %}">
+                                <div class="main-logo">
+                                    <img src="{% static 'images/logo-of-both-removebg-preview.png' %}" alt="main logo" />
+                                </div>
+                            </a>
+                        </li>
+
+                        
+                        <li>
+                            <div class="both-icon-and-username">
+                                <div class="username-user">
+                                    {% if request.user.is_authenticated %}
+
+                                    <h3  class="if_else_user_logged"   >{{request.user.username}}</h3>
+                                    <a href="{% url 'users:logout' %}"   class="if_else_login">Log out</a>
+
+                                    {% else %}
+
+                                    <a href="{% url 'users:login' %}"   class="if_else_login">Log In</a>
+                                    <!-- <h3  class="if_else_user_logged"   >Username</h3> -->
+
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </header>
+                <section class="wrapper">
+                    <section id="main-view-full">
+                        <div class="spotlight-both">
+                            <div class="left-detail">
+                                <h1 class="main-heading-for-site">Create Your <br /> <span class="special-styling">Wiki </span> Page </h1>
+                                
+                                <div class="video-container-for-detail-none">
+                                    <video   controls poster="{% static 'images/coach username.png' %}" >
+                                        <source src="{% static 'video/explainer.mp4' %}" type="video/mp4" />
+                                    </video>
+                                </div>
+
+                                <h3 class="why-choose">Why create a <span class="special-styling">Wiki</span>  Page?</h3>
+                                <p class="detail-of-wiki">
+                                    Having a Wikipedia page can increase visibility and reach for individuals and organizations by providing a platform for sharing information about their accomplishments, contributions, and history.
+                                </p>
+                                {% if request.user.is_authenticated %}
+                                    <a href="{% url 'web:view_all_created' %}" class="button-for-join">Create Now</a>
+                                    {% else %}
+                                    <a href="{% url 'users:login' %}" class="button-for-join">Create Now</a>
+                                {% endif %}
+                            </div>
+                            <div class="right-video">
+                                <div class="video-container-for-detail">
+                                    <video   controls poster="{% static 'images/coach username.png' %}" >
+                                        <source src="{% static './video/explainer.mp4' %}" type="video/mp4" />
+                                    </video>
+                                </div> 
+                            </div>
+                        </div> <!-- div.spotlight-both ended -->
+                    </section> <!-- #main-view-full -->
+                    <div class="for-external-bg">
+                        
+                    </div>
+                    
+                </section> <!-- .wrapper ended -->
+                <div class="for-bg-awesome">
+                    <div class="shapes animate-shapes bubble">
+                        <img src="{% static 'images/custom1.png' %}" alt="shape-bubble" />
+                    </div>
+                    <div class="shapes animate-shapes hexa">
+                        <img src="{% static 'images/custom2.png' %}" alt="shape-hexa" />
+                    </div>
+                    <div class="shapes animate-shapes three-shapes">
+                        <img src="{% static 'images/custom3.png' %}" alt="shape-three-shapes" />
+                    </div>
+                    <div class="shapes animate-shapes tria">
+                        <img src="{% static 'images/custom4.png' %}" alt="shape-tria" />
+                    </div>
+                    <div class="shapes animate-shapes hexa-out">
+                        <img src="{% static 'images/custom22.png' %}" alt="shape-hexa-out" />
+                    </div>
+                    <div class="shapes animate-shapes love-shape">
+                        <img src="{% static 'images/custom55.png' %}" alt="love-shape" />
+                    </div>
+                    <div class="shapes animate-shapes three-new-shapes">
+                        <img src="{% static 'images/custom66.png' %}" alt="shape-three-new-shapes" />
+                    </div>
+                </div>
+            </section>
+        </section>
+        <div class="bottom-tandc">
+            <a href="{% url 'users:t_and_c' %}" class="tandc">Terms and Conditions</a>
+            <a href="{% url 'web:adil' %}" class="akt16">Creator</a>
+            <a href="{% url 'users:t_and_c' %}" class="tandc pp">Privacy policy</a>
+        </div>
+    </body>
+</html>

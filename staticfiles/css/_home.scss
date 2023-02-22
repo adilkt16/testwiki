@@ -1,0 +1,547 @@
+#full-here {
+    
+    section.for_second_bg {
+        
+        header.main-page-header {
+        
+            // background: #60efff;
+            // background-image: linear-gradient(to left,#60efff, #00ff87);
+            margin-bottom: 0;
+            display: block;
+            ul {
+                margin: 0 auto;
+                width: 90%;
+                max-width: 993.3px;
+                min-width: 980px;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                li {
+                    a {
+                        div.main-logo {
+                            width: 120px;
+                            height: auto;
+                            display: block;
+                            img {
+                                display: block;
+                            }
+                        }
+                    }
+                    div.both-icon-and-username {
+                        div.username-user {
+                            display: flex;
+                            align-items: center;
+                            a {
+                                color: #fff;
+                                padding: 6px 15px;
+                                border-radius: 5px;
+                                font-family: 'Blinker';
+                                font-weight: bolder;
+                                // background:mediumseagreen;
+                                background-color: #005691;
+                                margin-left: 10px;
+                            }
+                            h3 {
+                                color: #fff;
+                                padding: 6px 15px;
+                                border-radius: 5px;
+                                font-family: 'Blinker';
+                                background:mediumseagreen;
+                            }   
+                        }
+                    }
+                    a {
+                        div.creator-adil-detail {
+                            width: 30px;
+                            height: auto;
+                            display: block;
+                            img {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        } //header ended here
+        
+        #main-view-full {
+            div.spotlight-both {
+                padding: 100px 0;
+                align-items: center;
+                display: flex;
+                justify-content: space-between;
+                div.left-detail {
+                    width: 52%;
+                    h1.main-heading-for-site {
+                        span {
+                            font-family: 'Lobster', cursive;
+                        }
+                        font-size: 70px;
+                        font-weight: bolder;
+                        font-family: 'Blinker',sans-serif;
+                    }
+                    div.video-container-for-detail-none {
+                        width: 500px;
+                        height: auto;
+                        display: none;
+                        video {
+                            border-radius: 10px;
+                            width: 100%;
+                            display: block;
+                            height: auto;
+                            border: 2px solid #5fd5b6 ;
+                            source {
+
+                            }
+                            
+                        }
+                    }
+                    h3.why-choose {
+                        font-size: 36px;
+                        margin: 40px 0;
+                        font-weight: bolder;
+                        font-family: 'Blinker',sans-serif;
+                    }
+                    p.detail-of-wiki {
+                        width: 80%;
+                        font-size: 18px;
+                        font-family:'Blinker';
+                    }
+                    a.button-for-join {
+                        // padding: 10px;
+                        // border-radius: 10px;
+                        // background:#d0f224;
+                        // display: inline-block;
+                        // margin: 10px 0;
+                        // font-size: sans-serif;
+                        // font-weight: bolder;
+                        background-color: #5fd5b6;
+                        color: #fff;
+                        border: none;
+                        text-align: center;
+                        padding: 10px 20px;
+                        margin: 30px 0;
+                        border-radius: 25px;
+                        display: inline-block;
+                        font-size: sans-serif;
+                        font-weight: bolder;
+                    }
+                }
+                div.right-video {
+                    width: 46%;
+                    div.video-container-for-detail {
+                        width: 500px;
+                        height: auto;
+                        display: block;
+                        video {
+                            border-radius: 10px;
+                            width: 100%;
+                            display: block;
+                            height: auto;
+                            border: 2px solid #5fd5b6 ;
+                            source {
+
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    
+}
+span.special-styling {
+    font-family: 'Lobster', cursive;
+    color: #0d2f81;
+    letter-spacing: 2px;
+}
+
+body.for_main_body {
+    position: relative;
+    // background-color: rgb(28 25 23 );
+    
+    background: radial-gradient(circle at 0 0,#5fd5b6 0,#5fd5b600 30%),linear-gradient(180deg,#79dfffb3 -10%,#79dfff00 70%),radial-gradient(circle at 95% 0,#d0f224 0,#5fd5b600 20%);
+    min-height: 100vh;
+    max-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+div.bottom-tandc {
+    // background-image: url("../images/bg-01-hero.svg");
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    a {
+
+    }
+}
+
+div.for-external-bg {
+    width: 800px;
+    position: absolute;
+    top: 150px;
+    // transform: rotate(45deg);
+    z-index: -2;
+    height: auto;
+    display: block;
+    img {
+        display: block;
+        filter: invert(76%) sepia(62%) saturate(334%) hue-rotate(108deg) brightness(90%) contrast(88%);
+    }
+}
+
+
+div.for-bg-awesome {
+    position: relative;
+    div.shapes {
+        z-index: -2;
+        width: 50px;
+        height: auto;
+        display: block;
+        position: absolute;
+        img {
+            display: block;
+            z-index: -2;
+            filter: invert(76%) sepia(62%) saturate(334%) hue-rotate(108deg) brightness(90%) contrast(88%);
+        }
+    }
+    div.bubble {
+        bottom: 480px;
+        left: 100px;
+        img {}
+    }
+    div.hexa {
+        bottom: 550px;
+        left: 560px;
+        img {}
+    }
+    div.three-shapes {
+        bottom: 350px;
+        left: 600px;
+        img {}
+    }
+    div.tria {
+        bottom: 500px;
+        left: 750px;
+        img {}
+    }
+
+    div.hexa-out {
+        bottom: 200px;
+        left: 350px;
+        img {}
+    }
+    div.love-shape {
+        bottom: 500px;
+        left: 950px;
+        img {}
+    }
+    div.three-new-shapes {
+        bottom: 100px;
+        left: 1005px;
+        img {}
+    }
+}
+
+
+div.animate-shapes {
+    animation-name: floating-shapes;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes floating-shapes {
+    0% {
+        display: none;
+    }
+    10% {
+        margin-top: 10px;
+        filter: invert(13%) sepia(73%) saturate(2025%) hue-rotate(209deg) brightness(110%) contrast(103%);
+    }
+    20% {
+        margin-left: 10px;
+    }
+    30% {
+        margin-right: 10px;
+    }
+    40% {
+        margin-bottom: 10px;
+    }
+    50% {
+        transform: scale(1.02);
+        margin-bottom: 10px;
+    }
+    60% {
+        opacity: 0.8;
+        margin-right: 10px;
+    }
+    70% {
+        margin-left: 10px;
+    }
+    80% {
+        margin-top: 10px;
+        transform: scale(0.8);
+    }
+    90% {
+        transform: scale(1);
+    }
+}
+
+
+
+
+@media all and(max-width:1199px){
+    div.for-bg-awesome div.love-shape {
+        bottom: 500px;
+        left: 300px;
+    }
+    div.for-bg-awesome div.three-new-shapes {
+        bottom: 100px;
+        left: 280px;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both {
+        padding: 100px 0 0;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.right-video div.video-container-for-detail {
+        width: 450px;
+    }
+}
+
+@media all and (max-width:980px){
+    section.for_second_bg section.wrapper {
+        max-width: 840px;
+        min-width: auto;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both {
+        padding: 60px 0 0;
+    }
+    #full-here section.for_second_bg header.main-page-header ul {
+        max-width: 993.3px;
+        min-width: auto;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail {
+        width: 48%;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.right-video {
+        width: 50%;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.right-video div.video-container-for-detail {
+        width: 400px;
+    }
+}
+
+
+@media all and (max-width:860px){
+    #full-here section.for_second_bg #main-view-full div.spotlight-both {
+        flex-wrap: wrap;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail {
+        width: 98%;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.right-video {
+        display: none;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both {
+        padding: 20px 0 0;
+        text-align: center;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail h1.main-heading-for-site br {
+        display: none;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail p.detail-of-wiki {
+        width: 100%;
+        font-size: 18px;
+        font-family: 'Blinker';
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail div.video-container-for-detail-none {
+        width: 500px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail h3.why-choose {
+        margin: 20px 0;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail h1.main-heading-for-site {
+        font-size: 60px;
+    }
+    #full-here section.for_second_bg header.main-page-header ul {
+        max-width: 768px;
+        min-width: auto;
+    }
+    div.bottom-tandc a {
+        font-size: 14px;
+    }
+    div.bottom-tandc a.akt16 {
+        font-size: 16px;
+    }
+}
+
+
+
+@media all and(max-width:660px){
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail h1.main-heading-for-site {
+        font-size: 54px;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail div.video-container-for-detail-none {
+        width: 400px;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail p.detail-of-wiki {
+        width: 100%;
+        font-size: 16px;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail h3.why-choose {
+        font-size: 30px;
+        margin: 20px 0 10px;
+    }
+    div.for-bg-awesome div.shapes {
+        width: 30px;
+    }
+    div.for-bg-awesome div.hexa {
+        bottom: 550px;
+        left: 200px;
+    }
+    div.for-bg-awesome div.three-shapes {
+        bottom: 350px;
+        left: 560px;
+    }
+    div.for-bg-awesome div.tria {
+        bottom: 320px;
+        left: 50px;
+    }
+    div.for-bg-awesome div.three-new-shapes {
+        bottom: 15px;
+        left: 450px;
+    }
+}
+
+
+@media all and (max-width:480px){
+    section.for_second_bg section.wrapper {
+        max-width: 380px;
+        min-width: auto;
+    }
+    #full-here section.for_second_bg header.main-page-header ul {
+        max-width: 380px;
+        min-width: auto;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail h1.main-heading-for-site {
+        font-size: 48px;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both {
+        padding: 0px 0 0;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail div.video-container-for-detail-none {
+        width: 340px;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail h3.why-choose {
+        font-size: 26px;
+        margin: 20px 0 10px;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail p.detail-of-wiki {
+        width: 100%;
+        font-size: 14px;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail a.button-for-join {
+        padding: 6px 15px;
+        margin: 20px 0 10px;
+        border-radius: 25px;
+        font-size: 14px;
+    }
+    body.for_main_body {
+        min-height: auto;
+        max-height: auto;
+    }
+    #full-here section.for_second_bg header.main-page-header ul li div.both-icon-and-username div.username-user h3 {
+        padding: 4px 12px;
+        font-size: 14px;
+    }
+    #full-here section.for_second_bg header.main-page-header ul li div.both-icon-and-username div.username-user a {
+        font-size: 14px;
+        color: #fff;
+        padding: 4px 12px;
+    }
+}
+
+
+@media all and (max-width:400px){
+    div.bottom-tandc a {
+        font-size: 10px;
+    }
+    div.bottom-tandc a.akt16 {
+        font-size: 14px;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail div.video-container-for-detail-none {
+        width: 300px;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail h1.main-heading-for-site {
+        font-size: 36px;
+    }
+    #full-here section.for_second_bg header.main-page-header ul li a div.main-logo {
+        width: 80px;
+    }
+    #full-here section.for_second_bg header.main-page-header ul li div.both-icon-and-username div.username-user a {
+        padding: 3px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+    }
+    #full-here section.for_second_bg header.main-page-header ul li div.both-icon-and-username div.person-icon {
+        margin-right: 5px;
+    }
+    div.for-bg-awesome div.hexa {
+        bottom: 150px;
+        left: 200px;
+    }
+    div.for-bg-awesome div.three-shapes {
+        bottom: 50px;
+        left: 60px;
+    }
+    div.for-bg-awesome div.tria {
+        bottom: 400px;
+        left: 50px;
+    }
+    div.for-bg-awesome div.hexa-out {
+        bottom: 100px;
+        left: 150px;
+    }
+    div.for-bg-awesome div.shapes {
+        width: 20px;
+    }
+    div.for-bg-awesome div.love-shape {
+        bottom: 400px;
+        left: 240px;
+    }
+    div.for-bg-awesome div.shapes {
+        width: 20px;
+    }
+    div.for-bg-awesome div.three-new-shapes {
+        bottom: 450px;
+        left: 250px;
+    }
+}
+
+@media all and(max-width:350px){
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail div.video-container-for-detail-none {
+        width: 280px;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail h1.main-heading-for-site {
+        font-size: 30px;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail h3.why-choose {
+        font-size: 22px;
+        margin: 20px 0 10px;
+    }
+    #full-here section.for_second_bg #main-view-full div.spotlight-both div.left-detail p.detail-of-wiki {
+        width: 100%;
+        font-size: 12px;
+    }
+}

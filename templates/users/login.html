@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html style="overflow-x: hidden;" lang="en" class="for_html">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'images/logo-of-both-removebg-preview.png' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type='text/javascript'></script>
+    </head>
+    <body  style="overflow-x: hidden;">
+        <section id="login_complete">
+            <section class="wrapper">
+                <h1 class="login_heading">Login</h1>
+                <section class="both-ad-and-input">
+                    <section class="single-input-full">
+                        <form action="" method="post" >
+                            {% csrf_token %}
+                            <div id="form_div" style="display: unset;" >
+                                <label class="for_username_Class" for="username">Username</label>
+                                <input class="for_input_username" type="text" name="username" id="username" />
+                                <label class="for_password_Class" for="password">Password</label>
+                                <input class="for_input_password" type="password" name="password" id="password" />
+                                <input class="for_input_submit" type="submit" value="Log In">
+                            </div>
+                        </form>
+                        
+                        <div class="already_account">
+                            <p class="already">If you dont have an Account</p>
+                            <a href="{% url 'users:signup' %}" class="login_button">SignUp</a>
+                            <a href="{% url 'web:index' %}" class="login_button">Home</a>
+                        </div>
+                    </section>
+                    <section id="add-section" class="login_ad_image" >
+                        <a target="blank" href="https://steyp.com"><img src="{% static 'images/ads/steyp.jpeg' %}" alt="steyp_ad_image" /></a>
+                        
+                    </section>
+                </section> <!-- section.both-ad-and-input ended here  -->
+                
+            </section>
+        </section>
+        
+    </body>
+</html>

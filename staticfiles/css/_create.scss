@@ -1,0 +1,588 @@
+
+input,
+textarea,
+select {
+    font-weight: 400;
+}
+
+a {
+    color: #1c2c40;
+}
+a:hover,
+.submit:hover {
+    filter: alpha(opacity = 85);
+    -moz-opacity: 0.85;
+    -khtml-opacity: 0.85;
+    opacity: 0.85;
+}
+.thumb {
+    display: block;
+}
+.thumb img {
+    display: block;
+    width: 100%;
+}
+.hidden {
+    display: none;
+}
+br.clear {
+    clear: both;
+    line-height: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+h3.create_heading {
+    font-size: 36px;
+    text-align: center;
+    width: auto;
+    margin: 0 auto;
+}
+
+div.for-home {
+    a {
+        button {
+            padding: 10px;
+            background:#1c2c40;
+            color: #fff;
+            border-radius: 5px;
+        }
+    }
+}
+section.for-termsandconditions {
+    padding: 10px;
+    background: mediumseagreen;
+    div.grouping-all {
+        display: flex;
+        justify-content: space-between;
+        a {
+            span {
+                color: blue;
+            }
+        }
+    }
+}
+
+html body section section.wrapper input.accepting_image_input {
+    padding: 10px;
+    background:#0ac07d;
+}
+
+div.accepting_image {
+    label {
+        
+    }
+    input {
+        padding: 10px;
+        background:#0ac07d;
+    }
+    #id_featured_image {
+        
+    }
+}
+
+div.description {
+    div.editor {
+        textarea {
+            height: 10em;
+            width: 40em;
+        }
+    }
+}
+div.career-description {
+        textarea {
+            height: 7em;
+            width: 40em;
+        }
+}
+div.awards-description {
+        textarea {
+            height: 7em;
+            width: 40em;
+        }
+}
+
+header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    justify-content: space-between;
+}
+header h1 {
+    width: 150px;
+}
+header h1 a {
+    display: block;
+}
+header a.login {
+    background-color: #5aab7b;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    display: inline-block;
+}
+header a.login.my-posts {
+    margin: 0 15px 0 auto;
+}
+header div#hamburger-icon {
+    display: none;
+};
+
+/* index-page css  completed */
+
+#edit-post-home {
+    padding: 3% 0 5%;
+    position: relative;
+}
+#edit-post-home .wrapper {
+}
+#edit-post-home section.spotlight {
+}
+#edit-post-home section.spotlight h3 {
+    font-size: 30px;
+    margin-bottom: 2%;
+    color: #000;
+    font-weight: 700;
+    display: inline-block;
+}
+#edit-post-home section.spotlight form  {
+}
+#edit-post-home section.spotlight form  label {
+    margin: 20px 0;
+}
+#edit-post-home form div.form-field {
+    margin-bottom: 30px;
+}
+#edit-post-home section.spotlight form div.title {
+    position: relative;
+    width: 100%;
+    border: 2px solid #949494;
+    border-radius: 6px;
+    padding: 25px;
+    margin-bottom: 3%;
+}
+#edit-post-home section.spotlight form div.title input {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 700;
+    color: #3f3f3f;
+}
+#edit-post-home section.spotlight form div.title label {
+    position: absolute;
+    top: -15%;
+    padding: 2px 15px;
+    background: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    left: 3%;
+    border-radius: 15px;
+    text-align: center;
+}
+#edit-post-home section.spotlight form label {
+    font-size: 18px;
+    font-weight: 700;
+    color: #6c6c6c;
+}
+#edit-post-home section.spotlight form div.description {
+    width: 100%;
+    border: 2px solid #949494;
+    border-radius: 6px;
+    margin-bottom: 3%;
+}
+#edit-post-home section.spotlight form div.description div.top {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #949494;
+    padding: 10px;
+}
+#edit-post-home section.spotlight form div.description div.top div.paragraph {
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+    align-items: center;
+    border-right: 2px solid #949494;
+    padding: 10px 20px;
+}
+#edit-post-home section.spotlight form div.description div.top div.paragraph p {
+    color: #3f3f3f;
+    font-weight: 700;
+}
+#edit-post-home
+    section.spotlight
+    form
+    div.description
+    div.top
+    div.paragraph
+    span.arrow {
+    transform: rotate(180deg);
+    width: 15px;
+}
+#edit-post-home
+    section.spotlight
+    form
+    div.description
+    div.top
+    div.paragraph
+    span.arrow
+    img {
+    filter: invert(1);
+}
+#edit-post-home section.spotlight form div.description textarea {
+    width: 100%;
+    font-size: 20px;
+    color: #3f3f3f;
+    font-weight: 700;
+}
+#edit-post-home section.spotlight form div.description p.bottom {
+    border-top: 2px solid #949494;
+    padding: 20px 30px;
+    color: #3f3f3f;
+    font-weight: 700;
+}
+#edit-post-home section.spotlight form .input {
+    border: 2px solid #949494;
+    padding: 20px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 700;
+    color: #3f3f3f;
+    border-radius: 10px;
+}
+#edit-post-home section.spotlight form label.checkbox {
+    display: flex;
+    cursor: pointer;
+    margin-bottom: 20px;
+    align-items: center;
+}
+#edit-post-home section.spotlight form label.checkbox span {
+    font-size: 18px;
+    font-weight: 700;
+    color: #6c6c6c;
+}
+#edit-post-home section.spotlight form label.checkbox input[type="checkbox"] {
+    appearance: none;
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #0ac07d;
+    border-radius: 5px;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+#edit-post-home section.spotlight form input[type="checkbox"]::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    background-color: #0ac07d;
+}
+#edit-post-home section.spotlight form input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+#edit-post-home section.spotlight form input[type="checkbox"] {
+    margin-right: 18px;
+    cursor: pointer;
+}
+/* lkdhfjdhfjhdfjdfh */
+#edit-post-home section.spotlight form input[type="submit"] {
+    background-color: #5aab7b;
+    width: 10%;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#edit-post-home section.spotlight form label {
+    color: #3f3f3f;
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 10px;
+}
+.ck.ck-label.ck-voice-label{
+    display: none !important;
+}
+/* editpost-page css  completed */
+
+
+div.overlay {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    transform: scale(0);
+}
+div.overlay.active {
+    transform: scale(1);
+}
+
+
+@media all and (max-width: 1280px) {
+
+    #edit-post-home header a.login {
+        width: 12%;
+    }
+    #edit-post-home
+        section.spotlight
+        form
+        div.description
+        div.top
+        div.paragraph {
+        width: 17%;
+    }
+    #edit-post-home section.spotlight form input[type="submit"] {
+        width: 13%;
+    }
+    /* edit-post 1280px responsive  completed */
+
+}
+@media all and (max-width: 1080px) {
+    header div#hamburger-icon {
+        display: block;
+        width: 35px;
+    }
+    header a.login {
+        margin-right: 2%;
+    }
+
+    #edit-post-home section.spotlight h3 {
+        margin-bottom: 4%;
+    }
+    #edit-post-home section.spotlight ul.posts li.post div.top h5.title {
+        font-size: 26px;
+    }
+    #edit-post-home
+        section.spotlight
+        form
+        div.description
+        div.top
+        div.paragraph {
+        width: 19%;
+    }
+    /* edit-post 1080px responsive  completed */
+
+
+}
+@media all and (max-width: 980px) {
+    header h1 {
+        width: 100px;
+    }
+    header a.login {
+        width: 16%;
+    }
+    header a.login {
+        margin-right: 5%;
+    }
+    /* index 980px responsive  completed */
+
+    header h1 {
+        width: 100px;
+    }
+    header a.login {
+        width: 18%;
+    }
+    #edit-post-home section.spotlight form input[type="submit"] {
+        width: 16%;
+    }
+    #edit-post-home
+        section.spotlight
+        form
+        div.description
+        div.top
+        div.paragraph {
+        width: 25%;
+    }
+    /* edit-post 980px responsive  completed */
+
+}
+@media all and (max-width: 768px) {
+
+    #edit-post-home section.spotlight form .input {
+        padding: 10px 10px;
+        border-radius: 5px;
+    }
+    section.for-termsandconditions div.grouping-all a span {
+        font-size: 10px;
+    }
+    section.for-termsandconditions {
+        padding: 2px 5px;
+    }
+
+    header {
+        margin-bottom: 10%;
+    }
+    #edit-post-home section.spotlight h3 {
+        margin-bottom: 7%;
+    }
+    #edit-post-home section.spotlight form div.title input {
+        font-size: 18px;
+    }
+    #edit-post-home
+        section.spotlight
+        form
+        div.description
+        div.top
+        div.paragraph {
+        width: 27%;
+    }
+    #edit-post-home section.spotlight form input.input {
+        font-size: 18px;
+    }
+    #edit-post-home section.spotlight form input.input {
+        font-size: 18px;
+    }
+    #edit-post-home section.spotlight form p {
+        font-size: 16px;
+    }
+    #edit-post-home section.spotlight form input[type="submit"] {
+        width: 22%;
+    }
+    /* edit-post 768px responsive  completed */
+
+
+}
+@media all and (max-width: 640px) {
+    /* home 640px responsive  completed */
+
+
+    #edit-post-home {
+        padding: 7% 0;
+    }
+    header a.login {
+        width: 23%;
+    }
+    #edit-post-home section.spotlight form div.title {
+        margin-bottom: 7%;
+    }
+    #edit-post-home section.spotlight form div.description {
+        margin-bottom: 7%;
+    }
+    #edit-post-home section.spotlight form input.input {
+        margin-bottom: 7%;
+    }
+    #edit-post-home
+        section.spotlight
+        form
+        div.description
+        div.top
+        div.paragraph {
+        width: 37%;
+    }
+    #edit-post-home section.spotlight form div.title input {
+        font-size: 16px;
+    }
+    #edit-post-home section.spotlight form input.input {
+        font-size: 16px;
+    }
+    #edit-post-home section.spotlight form label {
+        font-size: 16px;
+    }
+    #edit-post-home section.spotlight form input[type="submit"] {
+        width: 25%;
+    }
+    /* edit-post 640px responsive  completed */
+}
+
+@media all and(max-width:560px){
+    #edit-post-home form div.form-field {
+        margin-bottom: 10px;
+    }
+    #edit-post-home section.spotlight form input.input {
+        margin-bottom: 4%;
+    }
+}
+
+@media all and (max-width: 480px) {
+    #edit-post-home {
+        padding: 0% 0 3% 0;
+    }
+    section.for-termsandconditions div.grouping-all a span {
+        font-size: 8px;
+    }
+    section.for-termsandconditions {
+        padding: 0px 5px;
+    }
+    #edit-post-home section.spotlight h3 {
+        margin-bottom: 6%;
+    }
+
+    #edit-post-home section.spotlight h3 {
+        font-size: 25px;
+    }
+    #edit-post-home section.spotlight form div.description textarea {
+        height: 7em;
+        padding-left: 10px;
+        font-size: 14px;
+        padding-top: 4px;
+    }
+    #edit-post-home section.spotlight form .input {
+        font-size: 14px;
+    }
+    #edit-post-home section.spotlight form input.input {
+        font-size: 10px;
+    }
+    #edit-post-home section.spotlight form .input {
+        padding: 7px 7px;
+    }
+    #edit-post-home
+        section.spotlight
+        form
+        div.description
+        div.top
+        div.paragraph {
+        width: 50%;
+    }
+    #edit-post-home section.spotlight form input[type="submit"] {
+        width: 30%;
+    }
+    /* edit-post 480px responsive  completed */
+
+
+}
+@media all and (max-width: 360px) {
+    header a.login.my-posts {
+        display: none;
+    }
+    header a.login {
+        margin-left: auto;
+    }
+    /* index 360px responsive  completed */
+
+
+    #edit-post-home
+        section.spotlight
+        form
+        div.description
+        div.top
+        div.paragraph {
+        width: 65%;
+    }
+    #edit-post-home section.spotlight form input[type="submit"] {
+        width: 40%;
+    }
+    /* edit-post 360px responsive  completed */
+
+}
+@media all and (max-width: 320px) {
+}
+
+.django-ckeditor-widget {
+    width: 100%;
+}

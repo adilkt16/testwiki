@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x: hidden;">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Creator (Adil)</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <link rel="icon" type="image/x-icon" href="{% static 'images/good.png' %}">
+    </head>
+    <body>
+        <section id="full-adil">
+            <header class="main-page-header">
+                <ul>
+                    <li>
+                        <a href="{% url 'web:index' %}">
+                            <div class="main-logo">
+                                <img src="{% static 'images/logo-of-both-removebg-preview.png' %}" alt="main logo" />
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </header>
+            <section id="detail-of-adil">
+                <div class="creator-img">
+                    <img src="{% static 'images/creator/good.png' %}" alt="adil-image" />
+                </div>
+                <h1 class="name">ADIL KT</h1>
+                <p class="stack">Fullstack Developer</p>
+                <p class="my-details">Hello world, I'm 18 y/o passionate developer from Kerala, India who loves to bring ideas to life. I love to develop applications using cutting edge tech.</p>
+                <div class="quick-contact">
+                    <a href="mailto:adilkt16@gmail.com">
+                        <div class="each-image">
+                            <img src="{% static 'images/creator/black-gmail-logo.svg' %}" alt="gmail" />
+                        </div>
+                        <span class="logo-name">Email</span>
+                    </a>
+                    <a href="https://instagram.com/a_k_t_16">
+                        <div class="each-image">
+                            <img src="{% static 'images/creator/black-instagram.svg' %}" alt="instagram" />
+                        </div>
+                        <span class="logo-name">Instagram</span>
+                    </a>
+                </div>
+                <section class="skills">
+                    <h2 class="subs">Skills</h2>
+                    <p>I'm doing this for almost 2 years from now, and I have learned a lot of things through this journey.</p>
+                    <div class="all-divs">
+                        <div class="each-skill">
+                            <span class="skill-name">Javascript</span>
+                        </div>
+                        <div class="each-skill">
+                            <span class="skill-name">HTML</span>
+                        </div>
+                        <div class="each-skill">
+                            <span class="skill-name">CSS</span>
+                        </div>
+                        <div class="each-skill">
+                            <span class="skill-name">REACT</span>
+                        </div>
+                        <div class="each-skill">
+                            <span class="skill-name">PYTHON</span>
+                        </div>
+                        <div class="each-skill">
+                            <span class="skill-name">DJANGO</span>
+                        </div>
+                        <div class="each-skill">
+                            <span class="skill-name">SASS</span>
+                        </div>
+                        <div class="each-skill">
+                            <span class="skill-name">BOOTSTRAP</span>
+                        </div>
+                        <div class="each-skill">
+                            <span class="skill-name">REST_API</span>
+                        </div>
+                        <div class="each-skill">
+                            <span class="skill-name">PWA</span>
+                        </div>
+                        <div class="each-skill">
+                            <span class="skill-name">GIT</span>
+                        </div>
+                    </div>
+                    <p>And much more...</p>
+                </section>  <!-- #skills ended here -->
+                <section class="projects">
+                    <h2>Projects</h2>
+                    <p>I've build many projects using different technologies. Here are some of my notable works.</p>
+                    <a href="{% url 'web:index' %}">
+                        <div class="one-complete">
+                            <h6>Wiki Page &#127760;</h6>
+                            <p class="project-para">A  Project in which user can login and create their wiki pedia page for free , and see other users who have created from the same site. 	 </p>
+                        </div>
+                    </a>
+                    <a href="https://adilkt16.github.io/ar_logistics/">
+                        <div class="one-complete">
+                            <h6> AR Logistics &#127760;</h6>
+                            <p class="project-para">A  Project in which user can login and create their wiki pedia page for free , and see other users who have created from the same site. 	 </p>
+                        </div>
+                    </a>
+                </section> <!-- .projects ended -->
+                <section class="contact">
+                    <h2>Wanna Connect with me ?</h2>
+                    <p>Feel free to connect with me anyway you like, I would love to meet new people.</p>
+                    <a href="mailto:adilkt16@gmail.com" class="gmail">adilkt16@gmail.com</a>
+                    <div class="all-contact-methods">
+                        <a href="https://www.linkedin.com/in/adilkt16/" class="each-contact">Linkedin</a>
+                        <a href="mailto:adilkt16@gmail.com" class="each-contact">Email</a>
+                        <a href="https://www.instagram.com/a_k_t_16/" class="each-contact">Instagram</a>
+                        <!-- <a href="#" class="each-contact">Telegram</a> -->
+                    </div>
+                </section>
+            </section> <!-- #detail-of-adil ended here -->
+        </section> <!-- #full-adil ended here -->
+    </body>
+</html>
