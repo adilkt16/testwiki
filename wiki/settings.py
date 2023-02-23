@@ -55,6 +55,7 @@ MIDDLEWARE = [
 ]
 
 CSRF_TRUSTED_ORIGINS = ['https://wikipage.up.railway.app/']
+CORS_ALLOWED_ORIGINS = ['https://wikipage.up.railway.app/']
 
 ROOT_URLCONF = 'wiki.urls'
 
