@@ -4,13 +4,13 @@ from multiprocessing import context
 from django.views.generic import DeleteView
 from django.shortcuts import redirect
 from django.shortcuts import render
-from django.http.response import HttpResponse , HttpResponseBadRequest
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render , get_object_or_404
 from django.core.paginator import Paginator #import Paginator
 from django.contrib.postgres.search import SearchVector, SearchQuery
 from django.core.exceptions import PermissionDenied
 from django.contrib.messages import constants as messages
+from django.views.decorators.csrf import csrf_exempt
 
 from posts.forms import BlogPostForm
 from posts.models import BlogPost
@@ -24,6 +24,7 @@ def index(request):
 
 
 @login_required(login_url = "/users/login/")
+@csrf_exempt
 def view_all_created(request):
 	posts_all = BlogPost.objects.all()
 	my_own = BlogPost.objects.filter()
@@ -67,6 +68,7 @@ def view_all_created(request):
 
 
 @login_required(login_url = "/users/login/")
+@csrf_exempt
 def create_post(request):
 	context = {
 		"title" : "Create Your Wiki Page"
@@ -75,6 +77,7 @@ def create_post(request):
 
 
 @login_required(login_url = "/users/login/")
+@csrf_exempt
 def add_wiki(request):
 	posts_created_by_user = BlogPost.objects.filter(name=request.user.username)
 	if posts_created_by_user.exists():
@@ -94,6 +97,7 @@ def add_wiki(request):
 
 
 @login_required(login_url = "/users/login/")
+@csrf_exempt
 def view_after_delete(request):	
 	posts_all = BlogPost.objects.filter()
 	what = BlogPost.objects.filter()
@@ -117,6 +121,7 @@ def view_after_delete(request):
 
 
 @login_required(login_url = "/users/login/")
+@csrf_exempt
 def delete_post(request, id):
     post = get_object_or_404(BlogPost, id=id)
     if request.user.username == post.name or request.user.is_staff:
@@ -129,7 +134,7 @@ def delete_post(request, id):
 
 
 
-
+@csrf_exempt
 def wikidetail(request,id,slugged):
 	post = get_object_or_404(BlogPost, id=id, slug=slugged)
 	posts_all = BlogPost.objects.filter()
