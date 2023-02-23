@@ -13,7 +13,7 @@ class UserForm(forms.ModelForm):
                 }) ,
 				"username" : forms.widgets.TextInput(attrs={
                     "class":"",
-                    "placeholder":"Enter your Username"
+                    "placeholder":"Username(No space)"
                 }) ,
         }
 

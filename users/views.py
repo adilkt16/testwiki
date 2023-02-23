@@ -127,9 +127,7 @@ def send_otp(request):
 	email=request.GET.get("email")
 	o=generateOTP()
 	htmlgen = f'<p>Your OTP is <strong>{o}</strong></p>'
-	print(o)
 	result = send_mail('OTP request',o,'wikipageverify@gmail.com',[gmail],  fail_silently=False, html_message=htmlgen)
-	print(result)
 
 	return HttpResponse(o)
 
