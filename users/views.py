@@ -2,9 +2,12 @@ from django.shortcuts import render , reverse
 from django.contrib.auth import authenticate , login as auth_login , logout as auth_logout
 from django.http.response import HttpResponseRedirect
 from django.contrib.auth.models import User
+from django.views.decorators.csrf import csrf_exempt
+
 
 from users.forms import UserForm
 from main.functions import generate_form_errors
+
 
 
 
@@ -20,6 +23,7 @@ def custom_permission_denied_view(request, exception=None):
 def custom_bad_request_view(request, exception=None):
     return render(request, "users/404.html", {})
 
+@csrf_exempt
 def login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -55,12 +59,13 @@ def login(request):
 from django.shortcuts import render , reverse
 from django.http.response import HttpResponseRedirect
 
+@csrf_exempt
 def logout(request):
 	auth_logout(request)
 	return HttpResponseRedirect(reverse("web:index"))
 
 
-
+@csrf_exempt
 def signup(request):
 	if request.method == "POST":
 		form = UserForm(request.POST)
@@ -107,6 +112,7 @@ from django.core.mail import send_mail
 import math, random
 
 
+@csrf_exempt
 def generateOTP() :
 	digits = "0123456789"
 	OTP = ""
@@ -114,6 +120,7 @@ def generateOTP() :
 		OTP += digits[math.floor(random.random() * 10)]
 	return OTP
 
+@csrf_exempt
 def send_otp(request):
 	# email=request.POST.get("email")
 	gmail=request.POST.get("email")
