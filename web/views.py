@@ -24,7 +24,6 @@ def index(request):
 
 
 @login_required(login_url = "/users/login/")
-@csrf_exempt
 def view_all_created(request):
 	posts_all = BlogPost.objects.all()
 	my_own = BlogPost.objects.filter()
@@ -97,7 +96,6 @@ def add_wiki(request):
 
 
 @login_required(login_url = "/users/login/")
-@csrf_exempt
 def view_after_delete(request):	
 	posts_all = BlogPost.objects.filter()
 	what = BlogPost.objects.filter()
@@ -121,7 +119,6 @@ def view_after_delete(request):
 
 
 @login_required(login_url = "/users/login/")
-@csrf_exempt
 def delete_post(request, id):
     post = get_object_or_404(BlogPost, id=id)
     if request.user.username == post.name or request.user.is_staff:
@@ -133,8 +130,6 @@ def delete_post(request, id):
         raise PermissionDenied
 
 
-
-@csrf_exempt
 def wikidetail(request,id,slugged):
 	post = get_object_or_404(BlogPost, id=id, slug=slugged)
 	posts_all = BlogPost.objects.filter()
