@@ -207,7 +207,7 @@ html.for_html {
         height: 280px;
     }
     #login_complete input[type=text] {
-        width: 50%;
+        width: 55%;
     }
     #login_complete input[type=password] {
         width: 50%;
@@ -228,6 +228,9 @@ html.for_html {
 }
 
 @media all and(max-width: 768px) {
+    #login_complete input[type=text] {
+        width: 72%;
+    }
     section.wrapper {
         max-width: 630px;
         min-width: 600px;
