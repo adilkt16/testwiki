@@ -15,7 +15,7 @@ class BlogPostForm(forms.ModelForm):
             'slug': forms.TextInput(attrs={'class':'form-control input', 'placeholder':'Copy the Name with no space and a hyphen in between'}),
             'occupation': forms.TextInput(attrs={'class':'form-control input ', 'placeholder':'Your Occupation'}),
             'education': forms.TextInput(attrs={'class':'form-control input ', 'placeholder':'Education status'}),
-            'born': forms.TextInput(attrs={'class':'form-control input', 'placeholder':'EXAMPLE 28 April 1990 (age 32) Wayanad, Kerala, India'}),
+            'born': forms.TextInput(attrs={'class':'form-control input', 'placeholder':'EXAMPLE 28 April 1990 (age 32)'}),
             'insta_link': forms.TextInput(attrs={'class':'form-control input', 'placeholder':'example https://www.instagram.com/a_k_t_16/'}),
             'image': forms.FileInput(attrs={'class':'form-control  upload-button__icon input',}),
             'main_description': forms.Textarea(attrs={'class':'form-control input', 'placeholder':'Main Content of Yourself . Atleast 250 characters'}),
