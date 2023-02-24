@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'wiki',
     'posts',
     "django.contrib.postgres",
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
