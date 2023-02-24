@@ -134,5 +134,14 @@
 					<a target="blank" href="mailto:adilkt16@gmail.com"><span>Give Ads</span></a>
 				</div>
 			</section>
+			<script>
+				const textarea = document.getElementById("myTextarea");
+				const charCount = document.getElementById("charCount");
+
+				textarea.addEventListener("input", function() {
+				const text = textarea.value;
+				charCount.textContent = text.length;
+				});
+			</script>
 		</body>
 	</html>

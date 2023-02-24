@@ -18,7 +18,7 @@ class BlogPostForm(forms.ModelForm):
             'born': forms.TextInput(attrs={'class':'form-control input', 'placeholder':'EXAMPLE 28 April 1990 (age 32)'}),
             'insta_link': forms.TextInput(attrs={'class':'form-control input', 'placeholder':'example https://www.instagram.com/a_k_t_16/'}),
             'image': forms.FileInput(attrs={'class':'form-control  upload-button__icon input',}),
-            'main_description': forms.Textarea(attrs={'class':'form-control input', 'placeholder':'Main Content of Yourself . Atleast 250 characters'}),
+            'main_description': forms.Textarea(attrs={ "id":"myTextarea",'class':'form-control input', 'placeholder':'Main Content of Yourself . Atleast 250 characters'}),
             'career_description': forms.Textarea(attrs={'class':'form-control input', 'placeholder':'Career Content of Yourself'}),
             
         }
