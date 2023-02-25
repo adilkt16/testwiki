@@ -19,6 +19,6 @@ class BlogPostForm(forms.ModelForm):
             'insta_link': forms.TextInput(attrs={'class':'form-control input', 'placeholder':'example https://www.instagram.com/a_k_t_16/'}),
             'image': forms.FileInput(attrs={'class':'form-control  upload-button__icon input',}),
             'main_description': forms.Textarea(attrs={ "id":"myTextarea",'class':'form-control input', 'placeholder':'Main Content of Yourself'}),
-            'career_description': forms.Textarea(attrs={'class':'form-control input', 'placeholder':'Career Content of Yourself'}),
+            'career_description': forms.Textarea(attrs={'class':'form-control input', 'placeholder':'Your Career'}),
             
         }
