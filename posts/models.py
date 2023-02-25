@@ -11,7 +11,7 @@ class BlogPost(models.Model):
     occupation=models.CharField(max_length=255)
     education=models.CharField(max_length=255)
     insta_link=models.CharField(max_length=255)
-    main_description = models.CharField(max_length=10000, validators=[MinLengthValidator(250)])
+    main_description = models.TextField()
     career_description=models.TextField()
     image = models.ImageField(upload_to="profile_pics")
 
