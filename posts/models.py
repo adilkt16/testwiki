@@ -18,6 +18,8 @@ class BlogPost(models.Model):
     dateTime=models.DateTimeField(auto_now_add=True)
     is_deleted = models.BooleanField(default=False)
 
+    class Meta:
+        ordering = ['-dateTime']
     
     def __str__(self):
         # return str(self.name) + " Occupation : " + self.occupation

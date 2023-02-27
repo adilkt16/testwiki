@@ -23,7 +23,6 @@ def index(request):
 	return render(request,'web/index.html',context=context)
 
 
-@login_required(login_url = "/users/login/")
 def view_all_created(request):
 	posts_all = BlogPost.objects.all()
 	my_own = BlogPost.objects.filter()
